@@ -2,23 +2,34 @@ part of 'booking_page_cubit.dart';
 
 class BookingPageState extends Equatable {
   const BookingPageState({
-    required this.selectedIndex,
     required this.state,
+    required this.navbarSelectedIndex,
+    required this.chipSelectedIndex,
   });
 
-  final int selectedIndex;
+  /// State for booking and detail page
   final BookingState state;
 
+  /// Bottom navbar selected index
+  final int navbarSelectedIndex;
+
+  final int chipSelectedIndex;
+
   @override
-  List<Object?> get props => [selectedIndex];
+  List<Object?> get props => [
+        navbarSelectedIndex,
+        chipSelectedIndex,
+      ];
 
   BookingPageState copyWith({
-    int? selectedIndex,
     BookingState? state,
+    int? navbarSelectedIndex,
+    int? chipSelectedIndex,
   }) {
     return BookingPageState(
-      selectedIndex: selectedIndex ?? this.selectedIndex,
       state: state ?? this.state,
+      navbarSelectedIndex: navbarSelectedIndex ?? this.navbarSelectedIndex,
+      chipSelectedIndex: chipSelectedIndex ?? this.chipSelectedIndex,
     );
   }
 }

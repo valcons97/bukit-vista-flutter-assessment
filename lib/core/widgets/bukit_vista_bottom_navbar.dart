@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/booking_page/cubit/booking_page_cubit.dart';
 
 class BukitVistaBottomNavbar extends StatelessWidget {
   const BukitVistaBottomNavbar({
@@ -40,7 +43,9 @@ class BukitVistaBottomNavbar extends StatelessWidget {
       showUnselectedLabels: true,
       selectedFontSize: 10,
       unselectedFontSize: 10,
-      onTap: (value) {},
+      onTap: (value) {
+        context.read<BookingPageCubit>().setNavbarIndex(value);
+      },
     );
   }
 }

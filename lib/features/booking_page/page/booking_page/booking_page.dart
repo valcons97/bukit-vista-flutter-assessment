@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/booking_page_cubit.dart';
 
+part 'part/chip.dart';
+part 'part/chips_list.dart';
 part 'part/date.dart';
 
 class BookingPage extends StatelessWidget {
@@ -17,10 +19,16 @@ class BookingPage extends StatelessWidget {
         if (state.state == BookingState.loading) {
           body = Container();
         } else if (state.state == BookingState.loaded) {
-          body = const CustomScrollView(
+          body = CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
-                child: DateContainer(),
+                child: Column(
+                  children: [
+                    const DateContainer(),
+                    const SizedBox(height: 12),
+                    ChipsList(selectedChipIndex: state.chipSelectedIndex),
+                  ],
+                ),
               ),
             ],
           );
@@ -28,7 +36,7 @@ class BookingPage extends StatelessWidget {
         return BukitVistaScaffold(
           title: 'Booking',
           body: body,
-          selectedIndex: state.selectedIndex,
+          selectedIndex: state.navbarSelectedIndex,
         );
       },
     );

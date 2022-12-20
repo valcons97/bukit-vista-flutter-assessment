@@ -9,6 +9,18 @@ part 'enums.dart';
 class BookingPageCubit extends Cubit<BookingPageState> {
   BookingPageCubit()
       : super(
-          const BookingPageState(selectedIndex: 1, state: BookingState.loaded),
+          const BookingPageState(
+            state: BookingState.loaded,
+            navbarSelectedIndex: 1,
+            chipSelectedIndex: 0,
+          ),
         );
+
+  void setNavbarIndex(int index) {
+    emit(state.copyWith(navbarSelectedIndex: index));
+  }
+
+  void setChipIndex(int index) {
+    emit(state.copyWith(chipSelectedIndex: index));
+  }
 }
