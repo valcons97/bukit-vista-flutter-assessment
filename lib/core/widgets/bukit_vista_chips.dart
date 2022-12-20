@@ -19,8 +19,8 @@ class BukitVistaChip extends StatelessWidget {
           Radius.circular(8),
         ),
         color: status == RoomStatus.notReady
-            ? const Color.fromARGB(255, 221, 119, 51)
-            : const Color.fromARGB(255, 33, 156, 64),
+            ? Colors.amber[700]
+            : Colors.green[700],
       ),
       child: Row(
         children: [

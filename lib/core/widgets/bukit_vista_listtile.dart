@@ -38,11 +38,11 @@ class BukitVistaListtile extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(8),
                       ),
-                      color: Color.fromARGB(255, 37, 122, 62),
+                      color: Colors.green[800],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
