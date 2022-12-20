@@ -11,10 +11,11 @@ class BukitVistaBottomNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
+      type: BottomNavigationBarType.fixed,
+      items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'My Property',
+          label: 'Property',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.list_alt_rounded),
@@ -34,7 +35,11 @@ class BukitVistaBottomNavbar extends StatelessWidget {
         ),
       ],
       currentIndex: selectedIndex,
-      selectedItemColor: Colors.amber[800],
+      selectedItemColor: Colors.blue[600],
+      unselectedItemColor: Colors.blue[900],
+      showUnselectedLabels: true,
+      selectedFontSize: 10,
+      unselectedFontSize: 10,
       onTap: (value) {},
     );
   }
