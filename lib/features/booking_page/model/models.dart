@@ -32,6 +32,28 @@ class BookingModel extends Equatable {
         status,
         roomType,
       ];
+
+  BookingModel copyWith({
+    String? id,
+    DateTime? checkInDate,
+    DateTime? checkOutDate,
+    int? totalReview,
+    RoomStatus? status,
+    String? roomType,
+    ProfileModel? profileModel,
+    HostModel? hostModel,
+  }) {
+    return BookingModel(
+      id: id ?? this.id,
+      checkInDate: checkInDate ?? this.checkInDate,
+      checkOutDate: checkOutDate ?? this.checkOutDate,
+      totalReview: totalReview ?? this.totalReview,
+      status: status ?? this.status,
+      roomType: roomType ?? this.roomType,
+      profileModel: profileModel ?? this.profileModel,
+      hostModel: hostModel ?? this.hostModel,
+    );
+  }
 }
 
 class ProfileModel extends Equatable {

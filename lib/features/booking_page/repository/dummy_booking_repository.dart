@@ -20,7 +20,27 @@ const dummyHostModel = HostModel(
 
 final dummyBookingModel = [
   BookingModel(
-    id: 'HMSFKG8KJK8JF',
+    id: 'Jonathan',
+    checkInDate: DateTime.utc(2022, 12, 20),
+    checkOutDate: DateTime.utc(2022, 12, 26),
+    totalReview: 12,
+    status: RoomStatus.notReady,
+    roomType: 'Grant Marshal',
+    profileModel: dummyProfileModel,
+    hostModel: dummyHostModel,
+  ),
+  BookingModel(
+    id: 'Leony',
+    checkInDate: DateTime.utc(2022, 12, 20),
+    checkOutDate: DateTime.utc(2022, 12, 26),
+    totalReview: 12,
+    status: RoomStatus.notReady,
+    roomType: 'Grant Marshal',
+    profileModel: dummyProfileModel,
+    hostModel: dummyHostModel,
+  ),
+  BookingModel(
+    id: 'Lala',
     checkInDate: DateTime.utc(2022, 12, 20),
     checkOutDate: DateTime.utc(2022, 12, 26),
     totalReview: 12,

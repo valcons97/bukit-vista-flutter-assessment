@@ -39,8 +39,13 @@ class BookingPage extends StatelessWidget {
                   childCount: state.bookingModel.length,
                   (context, index) {
                     return BukitVistaListtile(
+                      id: state.bookingModel[index].id,
                       date: state.bookingModel[index].checkInDate,
                       totalReview: state.bookingModel[index].totalReview,
+                      status: state.bookingModel[index].status,
+                      roomType: state.bookingModel[index].roomType,
+                      hostPropertyUnit:
+                          state.bookingModel[index].hostModel.hostPropertyUnit,
                     );
                   },
                 ),

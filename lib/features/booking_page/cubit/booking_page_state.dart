@@ -22,8 +22,10 @@ class BookingPageState extends Equatable {
 
   @override
   List<Object?> get props => [
+        state,
         navbarSelectedIndex,
         chipSelectedIndex,
+        bookingModel,
       ];
 
   BookingPageState copyWith({
