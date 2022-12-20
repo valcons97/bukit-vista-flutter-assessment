@@ -1,22 +1,33 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:get_it/get_it.dart';
 
+import 'core/di/config/di_config.dart';
 import 'core/di/injection.dart';
 import 'features/booking_page/cubit/booking_page_cubit.dart';
 import 'features/booking_page/page/booking_page.dart';
 
-GetIt getIt = GetIt.instance;
-
-Future<void> main() async {
+void main() async {
   await dotenv.load(fileName: 'env/.env');
 
-  configureInjection();
+  configureInjection(determineEnvironment());
 
   runApp(
     const MyApp(),
   );
+}
+
+String determineEnvironment() {
+  if (DiConfig.enableDummyRepos) {
+    return Env.dummy;
+  }
+
+  if (kReleaseMode == true) {
+    return Env.dummy;
+  }
+
+  return Env.dev;
 }
 
 class MyApp extends StatelessWidget {

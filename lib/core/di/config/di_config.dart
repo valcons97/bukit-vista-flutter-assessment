@@ -1,4 +1,4 @@
-import 'package:bukit_vista/core/utils/lib/utils.dart';
+import 'package:bukit_vista/lib/utils.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// For configuration related to dependency injection framework

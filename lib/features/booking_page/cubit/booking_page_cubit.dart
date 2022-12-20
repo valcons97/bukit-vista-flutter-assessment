@@ -9,6 +9,6 @@ part 'enums.dart';
 class BookingPageCubit extends Cubit<BookingPageState> {
   BookingPageCubit()
       : super(
-          const BookingPageState(),
+          const BookingPageState(selectedIndex: 1, state: BookingState.loaded),
         );
 }
