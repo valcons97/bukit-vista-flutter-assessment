@@ -5,6 +5,7 @@ class BookingPageState extends Equatable {
     required this.state,
     required this.navbarSelectedIndex,
     required this.chipSelectedIndex,
+    required this.bookingModel,
   });
 
   /// State for booking and detail page
@@ -13,7 +14,11 @@ class BookingPageState extends Equatable {
   /// Bottom navbar selected index
   final int navbarSelectedIndex;
 
+  /// Chip selected index
   final int chipSelectedIndex;
+
+  /// List of booking
+  final List<BookingModel> bookingModel;
 
   @override
   List<Object?> get props => [
@@ -25,11 +30,13 @@ class BookingPageState extends Equatable {
     BookingState? state,
     int? navbarSelectedIndex,
     int? chipSelectedIndex,
+    List<BookingModel>? bookingModel,
   }) {
     return BookingPageState(
       state: state ?? this.state,
       navbarSelectedIndex: navbarSelectedIndex ?? this.navbarSelectedIndex,
       chipSelectedIndex: chipSelectedIndex ?? this.chipSelectedIndex,
+      bookingModel: bookingModel ?? this.bookingModel,
     );
   }
 }

@@ -1,7 +1,7 @@
-import 'package:bukit_vista/core/widgets/bukit_vista_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/widgets/widgets.dart';
 import '../../cubit/booking_page_cubit.dart';
 
 part 'part/chip.dart';
@@ -29,10 +29,22 @@ class BookingPage extends StatelessWidget {
                     const SizedBox(height: 12),
                     ChipsList(selectedChipIndex: state.chipSelectedIndex),
                     const SizedBox(height: 8),
-                    const TextButtonRow()
+                    const TextButtonRow(),
+                    const SizedBox(height: 16),
                   ],
                 ),
               ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  childCount: state.bookingModel.length,
+                  (context, index) {
+                    return BukitVistaListtile(
+                      date: state.bookingModel[index].checkInDate,
+                      totalReview: state.bookingModel[index].totalReview,
+                    );
+                  },
+                ),
+              )
             ],
           );
         }
