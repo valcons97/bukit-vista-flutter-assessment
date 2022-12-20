@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 import 'core/di/injection.dart';
-import 'features/home_page/home_page.dart';
+import 'features/booking_page/cubit/booking_page_cubit.dart';
+import 'features/booking_page/page/booking_page.dart';
 
 GetIt getIt = GetIt.instance;
 
@@ -27,7 +29,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: BlocProvider(
+        create: (_) => getIt<BookingPageCubit>(),
+        child: const BookingPage(),
+      ),
     );
   }
 }
