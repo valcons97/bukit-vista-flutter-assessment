@@ -2,7 +2,9 @@ import 'package:bukit_vista/core/widgets/bukit_vista_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/booking_page_cubit.dart';
+import '../../cubit/booking_page_cubit.dart';
+
+part 'part/date.dart';
 
 class BookingPage extends StatelessWidget {
   const BookingPage({super.key});
@@ -15,11 +17,17 @@ class BookingPage extends StatelessWidget {
         if (state.state == BookingState.loading) {
           body = Container();
         } else if (state.state == BookingState.loaded) {
-          body = Container();
+          body = const CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: DateContainer(),
+              ),
+            ],
+          );
         }
         return BukitVistaScaffold(
           title: 'Booking',
-          widget: body,
+          body: body,
           selectedIndex: state.selectedIndex,
         );
       },

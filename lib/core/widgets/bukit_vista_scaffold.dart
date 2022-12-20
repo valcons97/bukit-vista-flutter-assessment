@@ -6,12 +6,12 @@ class BukitVistaScaffold extends StatelessWidget {
   const BukitVistaScaffold({
     super.key,
     required this.title,
-    required this.widget,
+    required this.body,
     required this.selectedIndex,
   });
 
   final String title;
-  final Widget widget;
+  final Widget body;
   final int selectedIndex;
 
   @override
@@ -21,7 +21,7 @@ class BukitVistaScaffold extends StatelessWidget {
         centerTitle: true,
         title: Text(title),
       ),
-      body: widget,
+      body: body,
       bottomNavigationBar: BukitVistaBottomNavbar(selectedIndex: selectedIndex),
     );
   }
