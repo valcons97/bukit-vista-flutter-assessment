@@ -7,6 +7,7 @@ import '../../cubit/booking_page_cubit.dart';
 part 'part/chip.dart';
 part 'part/chips_list.dart';
 part 'part/date.dart';
+part 'part/text_button_row.dart';
 
 class BookingPage extends StatelessWidget {
   const BookingPage({super.key});
@@ -27,6 +28,8 @@ class BookingPage extends StatelessWidget {
                     const DateContainer(),
                     const SizedBox(height: 12),
                     ChipsList(selectedChipIndex: state.chipSelectedIndex),
+                    const SizedBox(height: 8),
+                    const TextButtonRow()
                   ],
                 ),
               ),
