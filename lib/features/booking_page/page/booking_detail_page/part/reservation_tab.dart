@@ -25,6 +25,9 @@ class ReservationTabView extends StatelessWidget {
           totalGuest: bookingModelDetail!.totalGuest,
           bookingValue: bookingModelDetail!.bookingValue.toString(),
         ),
+        BookingInformationPhoneTile(
+          phoneNumber: bookingModelDetail!.profileModel.phoneNumber,
+        ),
       ],
     );
   }

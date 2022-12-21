@@ -12,6 +12,8 @@ class BukitVistaScaffold extends StatelessWidget {
     required this.title,
     required this.body,
     required this.selectedIndex,
+    this.backButton = false,
+    this.onPressed,
   });
 
   /// Title for page
@@ -23,10 +25,22 @@ class BukitVistaScaffold extends StatelessWidget {
   /// Selected index for [BukitVistaBottomNavbar]
   final int selectedIndex;
 
+  /// To show back button
+  final bool backButton;
+
+  /// To program back button function
+  final VoidCallback? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: onPressed ?? () {},
+              )
+            : null,
         centerTitle: true,
         title: Text(title),
       ),

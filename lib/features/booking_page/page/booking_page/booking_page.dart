@@ -18,11 +18,13 @@ class BookingPage extends StatelessWidget {
     return BlocBuilder<BookingPageCubit, BookingPageState>(
       builder: (context, state) {
         late Widget body;
+        late bool backButton;
         if (state.state == BookingState.loading) {
           body = const Center(child: CircularProgressIndicator());
         } else if (state.state == BookingState.loaded) {
           switch (state.page) {
             case Booking.list:
+              backButton = false;
               body = CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
@@ -62,15 +64,21 @@ class BookingPage extends StatelessWidget {
               );
               break;
             case Booking.detail:
+              backButton = true;
               body = BookingDetailPage(
                 bookingModelDetail: state.bookingModelDetail,
               );
           }
         }
+
         return BukitVistaScaffold(
           title: 'Booking',
           body: body,
           selectedIndex: state.navbarSelectedIndex,
+          backButton: backButton,
+          onPressed: () {
+            context.read<BookingPageCubit>().goToBookingList();
+          },
         );
       },
     );

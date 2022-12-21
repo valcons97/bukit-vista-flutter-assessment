@@ -57,4 +57,12 @@ class BookingPageCubit extends Cubit<BookingPageState> {
       ),
     );
   }
+
+  void goToBookingList() {
+    emit(
+      state.copyWith(
+        page: Booking.list,
+      ),
+    );
+  }
 }

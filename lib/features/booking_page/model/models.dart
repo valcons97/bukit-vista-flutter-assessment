@@ -83,7 +83,7 @@ class ProfileModel extends Equatable {
   final String location;
   final String note;
   final List<String> journeyStatus;
-  final int phoneNumber;
+  final String phoneNumber;
 
   @override
   List<Object?> get props => [

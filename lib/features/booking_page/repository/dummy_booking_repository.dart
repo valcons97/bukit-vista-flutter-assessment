@@ -9,7 +9,7 @@ const dummyProfileModel = ProfileModel(
   location: 'Melbourne, Australia',
   note: '',
   journeyStatus: [],
-  phoneNumber: 081228606057,
+  phoneNumber: '081228606057',
 );
 
 const dummyHostModel = HostModel(
