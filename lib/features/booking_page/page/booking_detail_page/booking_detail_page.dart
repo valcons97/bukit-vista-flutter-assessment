@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:recase/recase.dart';
 
 import '../../../../core/core.dart';
 import '../../index.dart';
 
-part 'part/booking_day_tile.dart';
-part 'part/booking_id_tile.dart';
-part 'part/booking_phone_tile.dart';
-part 'part/booking_text.dart';
-part 'part/booking_value_tile.dart';
 part 'part/reservation_tab.dart';
 
 class BookingDetailPage extends StatelessWidget {
@@ -52,7 +46,7 @@ class BookingDetailPage extends StatelessWidget {
                           ProfileStatus.unknown,
                   imageUrl: bookingModelDetail?.profileModel.imageUrl ?? '',
                 ),
-                const BukitVistaDivider(),
+                const BukitVistaDivider(height: 6),
                 const TabBar(
                   tabs: tabs,
                   labelColor: Colors.blue,

@@ -10,6 +10,6 @@ class BukitVistaDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Divider(height: height ?? 3);
+    return Divider(height: height ?? 3, thickness: 1);
   }
 }
