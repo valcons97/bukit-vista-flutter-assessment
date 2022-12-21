@@ -19,9 +19,8 @@ class BukitVistaProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      color: Colors.white,
       child: Row(
         children: [
           CircleAvatar(

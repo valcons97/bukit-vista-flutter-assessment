@@ -1,10 +1,9 @@
-import 'package:bukit_vista/core/widgets/bukit_vista_profile_card.dart';
-import 'package:bukit_vista/features/booking_page/model/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/widgets.dart';
 import '../../cubit/booking_page_cubit.dart';
+import '../booking_detail_page/booking_detail_page.dart';
 
 part 'part/chip.dart';
 part 'part/chips_list.dart';
@@ -63,22 +62,8 @@ class BookingPage extends StatelessWidget {
               );
               break;
             case Booking.detail:
-              body = CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: BukitVistaProfileCard(
-                      name:
-                          state.bookingModelDetail?.profileModel.userName ?? '',
-                      location:
-                          state.bookingModelDetail?.profileModel.location ?? '',
-                      profileStatus: state
-                              .bookingModelDetail?.profileModel.profileStatus ??
-                          ProfileStatus.unknown,
-                      imageUrl:
-                          state.bookingModelDetail?.profileModel.imageUrl ?? '',
-                    ),
-                  ),
-                ],
+              body = BookingDetailPage(
+                bookingModelDetail: state.bookingModelDetail,
               );
           }
         }
