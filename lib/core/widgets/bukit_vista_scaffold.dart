@@ -52,6 +52,16 @@ class BukitVistaScaffold extends StatelessWidget {
             : null,
         centerTitle: true,
         title: Text(title),
+        actions: [
+          Row(
+            children: [
+              Visibility(visible: !backButton, child: const Icon(Icons.search)),
+              const SizedBox(width: 8),
+              const Icon(Icons.help_outline),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ],
       ),
       body: body,
       bottomNavigationBar: BukitVistaBottomNavbar(selectedIndex: selectedIndex),

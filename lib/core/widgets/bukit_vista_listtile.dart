@@ -74,7 +74,7 @@ class BukitVistaListtile extends StatelessWidget {
                   const SizedBox(height: 4),
                   Row(
                     children: [
-                      const Icon(Icons.chat, size: 12),
+                      const Icon(Icons.question_answer_outlined, size: 12),
                       const SizedBox(width: 4),
                       Text(
                         totalReview.toString(),
