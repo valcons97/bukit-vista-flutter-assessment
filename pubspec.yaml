@@ -56,6 +56,13 @@ dev_dependencies:
     sdk: flutter
   injectable_generator: ^1.5.4
 
+flutter_icons:
+  #  image_path: "assets/images/icon-128x128.png"
+  image_path_android: "assets/images/property.png"
+  image_path_ios: "assets/images/property.png"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
@@ -67,3 +74,4 @@ flutter:
 
   assets:
     - env/.env
+    - assets/images/
