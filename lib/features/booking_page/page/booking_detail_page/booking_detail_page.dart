@@ -50,7 +50,15 @@ class BookingDetailPage extends StatelessWidget {
                   children: [
                     SingleChildScrollView(
                         child: Container(height: 28000, child: Text('Tab 1'))),
-                    Text('Tab 2'),
+                    ReservationTabView(
+                      children: [
+                        BukitVistaInformationTile.stayingDays(
+                          checkIn: bookingModelDetail!.checkInDate,
+                          checkOut: bookingModelDetail!.checkOutDate,
+                        ),
+                        const BukitVistaDivider()
+                      ],
+                    )
                   ],
                 ),
               ),

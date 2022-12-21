@@ -15,12 +15,16 @@ class BukitVistaInformationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        leftCollumn,
-        middleCollumn ?? Container(),
-        rightCollumn,
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          leftCollumn,
+          middleCollumn ?? Container(),
+          rightCollumn,
+        ],
+      ),
     );
   }
 
@@ -30,11 +34,16 @@ class BukitVistaInformationTile extends StatelessWidget {
   }) {
     return BukitVistaInformationTile(
       leftCollumn: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text('Check in'),
           const SizedBox(height: 4),
           Text(
-            DateFormat('hh:mm').format(checkIn.toLocal()),
+            DateFormat('HH:mm').format(checkIn.toLocal()),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            DateFormat('MMM dd, yyyy').format(checkIn.toLocal()),
           )
         ],
       ),
@@ -42,15 +51,20 @@ class BukitVistaInformationTile extends StatelessWidget {
         children: [
           const Icon(Icons.bedtime_outlined),
           const SizedBox(height: 4),
-          Text(checkIn.difference(checkOut).inDays.toString()),
+          Text('${checkOut.difference(checkIn).inDays - 1} Night'),
         ],
       ),
       rightCollumn: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           const Text('Check out'),
           const SizedBox(height: 4),
           Text(
-            DateFormat('hh:mm').format(checkOut.toLocal()),
+            DateFormat('HH:mm').format(checkOut.toLocal()),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            DateFormat('MMM dd, yyyy').format(checkOut.toLocal()),
           )
         ],
       ),
