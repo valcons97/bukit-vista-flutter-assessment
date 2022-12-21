@@ -1,5 +1,6 @@
 part of '../booking_detail_page.dart';
 
+/// Tab view for reservation
 class ReservationTabView extends StatelessWidget {
   const ReservationTabView({
     super.key,

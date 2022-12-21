@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// Bukit vista information tile consist of
+/// 3 columns
 class BukitVistaInformationTile extends StatelessWidget {
   const BukitVistaInformationTile({
     super.key,
@@ -36,6 +38,7 @@ class BukitVistaInformationTile extends StatelessWidget {
     );
   }
 
+  /// Default for booking days tile
   factory BukitVistaInformationTile.bookingDays({
     required DateTime checkInDate,
     required DateTime checkOutDate,

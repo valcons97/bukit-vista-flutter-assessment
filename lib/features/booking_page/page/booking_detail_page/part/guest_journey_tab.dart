@@ -1,11 +1,13 @@
 part of '../booking_detail_page.dart';
 
+/// Tab view for guest journey
 class GuestJourneyTabView extends StatelessWidget {
   const GuestJourneyTabView({
     super.key,
     required this.guestJourney,
   });
 
+  /// list of guest journey
   final List<String> guestJourney;
 
   @override

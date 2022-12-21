@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/booking_page/cubit/booking_page_cubit.dart';
 
+/// Bottom navbar specially create for
+/// bukit vista flutter assessment
 class BukitVistaBottomNavbar extends StatelessWidget {
   const BukitVistaBottomNavbar({
     super.key,
@@ -10,8 +12,10 @@ class BukitVistaBottomNavbar extends StatelessWidget {
     this.onTap,
   });
 
+  /// Index for selected icon
   final int selectedIndex;
 
+  /// function for ontap
   final Function(int)? onTap;
 
   @override

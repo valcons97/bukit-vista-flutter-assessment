@@ -72,7 +72,10 @@ class BookingDetailPage extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      const GuestJourneyTabView(guestJourney: []),
+                      GuestJourneyTabView(
+                        guestJourney:
+                            bookingModelDetail!.profileModel.journeyStatus,
+                      ),
                       ReservationTabView(bookingModelDetail: bookingModelDetail)
                     ],
                   ),

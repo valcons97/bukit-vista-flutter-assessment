@@ -1,11 +1,13 @@
 part of '../booking_page.dart';
 
+/// Chip list that contain [Chip]
 class ChipsList extends StatelessWidget {
   const ChipsList({
     super.key,
     required this.selectedChipIndex,
   });
 
+  /// Curent selected chip
   final int selectedChipIndex;
 
   @override

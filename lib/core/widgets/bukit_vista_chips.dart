@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../features/booking_page/index.dart';
 
+/// Chip for showing status of the room
 class BukitVistaChip extends StatelessWidget {
   const BukitVistaChip({
     super.key,
     required this.status,
   });
 
+  /// Receive room status to check the widget shown
   final RoomStatus status;
 
   @override

@@ -50,6 +50,7 @@ class BookingPageCubit extends Cubit<BookingPageState> {
     emit(state.copyWith(bookingModel: changeModel));
   }
 
+  /// Move to booking detail page
   void goToBookingDetail(BookingModel bookingModelDetail) {
     emit(
       state.copyWith(
@@ -59,6 +60,7 @@ class BookingPageCubit extends Cubit<BookingPageState> {
     );
   }
 
+  /// Move to booking list and reset tab state
   void goToBookingList() {
     emit(
       state.copyWith(
@@ -68,6 +70,7 @@ class BookingPageCubit extends Cubit<BookingPageState> {
     );
   }
 
+  /// Set tab state
   void setTabState(int value) {
     final TabState tabState;
     value == 0 ? tabState = TabState.journey : tabState = TabState.reservation;

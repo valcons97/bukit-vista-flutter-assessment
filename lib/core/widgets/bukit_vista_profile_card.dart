@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import '../../features/booking_page/index.dart';
 import '../core.dart';
 
+/// Profile card for guest bukit vista contain
+/// - [name]
+/// - [location]
+/// - [profileStatus]
+/// - [imageUrl]
 class BukitVistaProfileCard extends StatelessWidget {
   const BukitVistaProfileCard({
     super.key,
@@ -12,9 +17,16 @@ class BukitVistaProfileCard extends StatelessWidget {
     required this.imageUrl,
   });
 
+  /// Guest's name
   final String name;
+
+  /// Guest's country origin
   final String location;
+
+  /// Guest's status
   final ProfileStatus profileStatus;
+
+  /// Guest's
   final String imageUrl;
 
   @override

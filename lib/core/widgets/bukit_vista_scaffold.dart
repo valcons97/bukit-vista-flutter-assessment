@@ -34,9 +34,10 @@ class BukitVistaScaffold extends StatelessWidget {
   /// To program back button function
   final VoidCallback? onPressed;
 
-  ///
+  /// Boolean to show floating button
   final bool floatingButton;
 
+  /// Notifier for speed dial
   final ValueNotifier<bool>? openCloseDial;
 
   @override

@@ -1,5 +1,8 @@
 part of '../booking_page.dart';
 
+/// Container consist of text button for
+/// - [Earlier]
+/// - [Refresh]
 class TextButtonRow extends StatelessWidget {
   const TextButtonRow({
     super.key,

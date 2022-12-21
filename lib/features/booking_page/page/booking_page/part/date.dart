@@ -1,8 +1,11 @@
 part of '../booking_page.dart';
 
+/// Date container for selecting start and end date
+/// currently still in hardcode
 class DateContainer extends StatelessWidget {
   const DateContainer({super.key});
 
+  /// TODO : remove hardcoded
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,5 +1,6 @@
 part of '../booking_page.dart';
 
+/// Widget for chip list
 class Chip extends StatelessWidget {
   const Chip({
     super.key,
@@ -8,8 +9,13 @@ class Chip extends StatelessWidget {
     required this.selectedChipIndex,
   });
 
+  /// Text for chip
   final String chipTitle;
+
+  /// Index of the chip
   final int chipIndex;
+
+  /// Curent selected chip
   final int selectedChipIndex;
 
   @override

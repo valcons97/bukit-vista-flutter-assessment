@@ -18,11 +18,22 @@ class BukitVistaListtile extends StatelessWidget {
     this.onTap,
   });
 
+  /// Booking id
   final String id;
+
+  /// Check in date
   final DateTime date;
+
+  /// Total review or comment
   final int totalReview;
+
+  /// Room status
   final RoomStatus status;
+
+  /// Room type
   final String roomType;
+
+  /// Host property own unit
   final String hostPropertyUnit;
 
   final VoidCallback? onTap;
