@@ -4,9 +4,11 @@ class BookingInformationValueTile extends StatelessWidget {
   const BookingInformationValueTile({
     super.key,
     required this.totalGuest,
+    required this.bookingValue,
   });
 
   final int totalGuest;
+  final String bookingValue;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,13 @@ class BookingInformationValueTile extends StatelessWidget {
         const SizedBox(height: 4),
         BookingSubtitleText(
           subtitle: totalGuest.toString(),
+        ),
+      ],
+      rightColumn: [
+        const BookingTitleText(title: 'Booking value'),
+        const SizedBox(height: 4),
+        BookingSubtitleText(
+          subtitle: bookingValue.toCurrency(),
         ),
       ],
     );

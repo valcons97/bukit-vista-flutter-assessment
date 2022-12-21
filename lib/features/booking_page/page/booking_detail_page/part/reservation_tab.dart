@@ -20,7 +20,11 @@ class ReservationTabView extends StatelessWidget {
         BookingInformationIdTile(
           bookingId: bookingModelDetail!.id,
           bookingStatus: bookingModelDetail!.bookingStatus,
-        )
+        ),
+        BookingInformationValueTile(
+          totalGuest: bookingModelDetail!.totalGuest,
+          bookingValue: bookingModelDetail!.bookingValue.toString(),
+        ),
       ],
     );
   }

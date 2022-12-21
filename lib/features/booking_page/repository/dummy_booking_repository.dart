@@ -32,6 +32,6 @@ final dummyBookingModel = [
     hostModel: dummyHostModel,
     bookingStatus: BookingStatus.cancelled,
     totalGuest: 2,
-    bookingValue: 120000000,
+    bookingValue: 12000000,
   ),
 ];
