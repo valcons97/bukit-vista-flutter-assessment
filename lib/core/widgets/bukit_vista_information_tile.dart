@@ -144,6 +144,7 @@ class BukitVistaInformationTile extends StatelessWidget {
     required String leftSubtitle,
     VoidCallback? onTap,
     Widget? icon,
+    Color? color,
   }) {
     return BukitVistaInformationTile(
       leftColumn: [
@@ -155,6 +156,7 @@ class BukitVistaInformationTile extends StatelessWidget {
             children: [
               BookingSubtitleText(
                 subtitle: leftSubtitle,
+                color: color,
               ),
               const SizedBox(width: 6),
               icon ?? Container(),
@@ -188,17 +190,19 @@ class BookingSubtitleText extends StatelessWidget {
     super.key,
     required this.subtitle,
     this.size,
+    this.color,
   });
 
   final String subtitle;
   final double? size;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       subtitle,
       style: TextStyle(
-        color: Colors.black54,
+        color: color ?? Colors.black54,
         fontSize: size ?? 12,
         fontWeight: FontWeight.w700,
       ),
