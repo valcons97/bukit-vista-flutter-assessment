@@ -21,14 +21,18 @@ class BookingPageCubit extends Cubit<BookingPageState> {
           ),
         );
 
+  /// Set active navbar index
   void setNavbarIndex(int index) {
     emit(state.copyWith(navbarSelectedIndex: index));
   }
 
+  /// Set active chip index
   void setChipIndex(int index) {
     emit(state.copyWith(chipSelectedIndex: index));
   }
 
+  /// Whenever owner press yes in booking list will change
+  /// room status into ready
   void setRoomStatus(String id) {
     final List<BookingModel> changeModel = [];
 

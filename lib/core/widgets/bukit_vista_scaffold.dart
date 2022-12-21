@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'bukit_vista_bottom_navbar.dart';
 
+/// Scaffold class for apps thats have [BukitVistaBottomNavbar], requiring :
+/// - [title]
+/// - [body]
+/// - [selectedIndex]
 class BukitVistaScaffold extends StatelessWidget {
   const BukitVistaScaffold({
     super.key,
@@ -10,8 +14,13 @@ class BukitVistaScaffold extends StatelessWidget {
     required this.selectedIndex,
   });
 
+  /// Title for page
   final String title;
+
+  /// List of widget for body
   final Widget body;
+
+  /// Selected index for [BukitVistaBottomNavbar]
   final int selectedIndex;
 
   @override

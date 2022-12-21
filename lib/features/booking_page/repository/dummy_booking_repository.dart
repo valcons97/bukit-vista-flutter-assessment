@@ -5,6 +5,7 @@ const dummyProfileModel = ProfileModel(
   id: '1',
   userName: 'Cleo Kimberly',
   status: 'repeater',
+  imageUrl: '',
   location: 'Melbourne, Australia',
   note: '',
   journeyStatus: [],

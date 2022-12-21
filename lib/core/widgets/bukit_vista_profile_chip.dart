@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../features/booking_page/model/enums.dart';
 
+/// Chip for profile thats indicating status like
+/// - repeater
+/// - backpacker
+/// - etc
 class BukitVistaProfileChip extends StatelessWidget {
   const BukitVistaProfileChip({
     super.key,
@@ -12,8 +16,6 @@ class BukitVistaProfileChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO : continue
-    /// Return widget based on profile status
     switch (profileStatus) {
       case ProfileStatus.repeater:
         return Container(
@@ -24,17 +26,35 @@ class BukitVistaProfileChip extends StatelessWidget {
             ),
           ),
           child: Row(
-            children: [
-              const Icon(Icons.star),
+            children: const [
+              Icon(Icons.star),
+              SizedBox(width: 4),
+              Text(
+                'Repeater',
+                style: TextStyle(color: Colors.green),
+              )
             ],
           ),
         );
 
       case ProfileStatus.backpacker:
-        return Row(
-          children: [
-            Icon(Icons.star),
-          ],
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.blueAccent),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(6),
+            ),
+          ),
+          child: Row(
+            children: const [
+              Icon(Icons.backpack),
+              SizedBox(width: 4),
+              Text(
+                'Backpacker',
+                style: TextStyle(color: Colors.blueAccent),
+              )
+            ],
+          ),
         );
     }
   }

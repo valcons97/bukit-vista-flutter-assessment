@@ -61,6 +61,7 @@ class ProfileModel extends Equatable {
     required this.id,
     required this.userName,
     required this.status,
+    required this.imageUrl,
     required this.location,
     required this.note,
     required this.journeyStatus,
@@ -69,6 +70,7 @@ class ProfileModel extends Equatable {
   final String id;
   final String userName;
   final String status;
+  final String imageUrl;
   final String location;
   final String note;
   final List<String> journeyStatus;
@@ -78,6 +80,7 @@ class ProfileModel extends Equatable {
         id,
         userName,
         status,
+        imageUrl,
         location,
         note,
         journeyStatus,
