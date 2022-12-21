@@ -4,8 +4,9 @@ import 'package:bukit_vista/features/booking_page/model/models.dart';
 const dummyProfileModel = ProfileModel(
   id: '1',
   userName: 'Cleo Kimberly',
-  status: 'repeater',
-  imageUrl: '',
+  profileStatus: ProfileStatus.repeater,
+  imageUrl:
+      'https://perfectczechwomen.com/wp-content/uploads/2019/04/New-Profile-20-500x536.jpg',
   location: 'Melbourne, Australia',
   note: '',
   journeyStatus: [],

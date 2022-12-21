@@ -19,19 +19,28 @@ class BukitVistaProfileChip extends StatelessWidget {
     switch (profileStatus) {
       case ProfileStatus.repeater:
         return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.green),
             borderRadius: const BorderRadius.all(
-              Radius.circular(6),
+              Radius.circular(14),
             ),
           ),
           child: Row(
             children: const [
-              Icon(Icons.star),
+              Icon(
+                Icons.star,
+                size: 14,
+                color: Colors.green,
+              ),
               SizedBox(width: 4),
               Text(
                 'Repeater',
-                style: TextStyle(color: Colors.green),
+                style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
               )
             ],
           ),
@@ -56,6 +65,9 @@ class BukitVistaProfileChip extends StatelessWidget {
             ],
           ),
         );
+
+      case ProfileStatus.unknown:
+        return Container();
     }
   }
 }

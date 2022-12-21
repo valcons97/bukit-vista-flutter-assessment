@@ -6,6 +6,8 @@ class BookingPageState extends Equatable {
     required this.navbarSelectedIndex,
     required this.chipSelectedIndex,
     required this.bookingModel,
+    required this.page,
+    this.bookingModelDetail,
   });
 
   /// State for booking and detail page
@@ -20,12 +22,18 @@ class BookingPageState extends Equatable {
   /// List of booking
   final List<BookingModel> bookingModel;
 
+  final Booking page;
+
+  final BookingModel? bookingModelDetail;
+
   @override
   List<Object?> get props => [
         state,
         navbarSelectedIndex,
         chipSelectedIndex,
         bookingModel,
+        page,
+        bookingModelDetail,
       ];
 
   BookingPageState copyWith({
@@ -33,12 +41,16 @@ class BookingPageState extends Equatable {
     int? navbarSelectedIndex,
     int? chipSelectedIndex,
     List<BookingModel>? bookingModel,
+    Booking? page,
+    BookingModel? bookingModelDetail,
   }) {
     return BookingPageState(
       state: state ?? this.state,
       navbarSelectedIndex: navbarSelectedIndex ?? this.navbarSelectedIndex,
       chipSelectedIndex: chipSelectedIndex ?? this.chipSelectedIndex,
       bookingModel: bookingModel ?? this.bookingModel,
+      page: page ?? this.page,
+      bookingModelDetail: bookingModelDetail ?? this.bookingModelDetail,
     );
   }
 }

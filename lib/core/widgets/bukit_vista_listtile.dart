@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '../../features/booking_page/cubit/booking_page_cubit.dart';
 import '../../features/booking_page/model/enums.dart';
 
+/// List tile for use in booking page list builder
 class BukitVistaListtile extends StatelessWidget {
   const BukitVistaListtile({
     super.key,
@@ -15,6 +16,7 @@ class BukitVistaListtile extends StatelessWidget {
     required this.status,
     required this.roomType,
     required this.hostPropertyUnit,
+    this.onTap,
   });
 
   final String id;
@@ -23,6 +25,8 @@ class BukitVistaListtile extends StatelessWidget {
   final RoomStatus status;
   final String roomType;
   final String hostPropertyUnit;
+
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +153,7 @@ class BukitVistaListtile extends StatelessWidget {
               /// Button to detail
               Material(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: onTap ?? () {},
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       vertical: 28,

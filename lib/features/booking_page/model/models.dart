@@ -60,7 +60,7 @@ class ProfileModel extends Equatable {
   const ProfileModel({
     required this.id,
     required this.userName,
-    required this.status,
+    required this.profileStatus,
     required this.imageUrl,
     required this.location,
     required this.note,
@@ -69,7 +69,7 @@ class ProfileModel extends Equatable {
 
   final String id;
   final String userName;
-  final String status;
+  final ProfileStatus profileStatus;
   final String imageUrl;
   final String location;
   final String note;
@@ -79,7 +79,7 @@ class ProfileModel extends Equatable {
   List<Object?> get props => [
         id,
         userName,
-        status,
+        profileStatus,
         imageUrl,
         location,
         note,

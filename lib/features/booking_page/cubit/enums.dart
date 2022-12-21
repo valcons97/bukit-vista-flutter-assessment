@@ -5,3 +5,8 @@ enum BookingState {
   loaded,
   errorLoading,
 }
+
+enum Booking {
+  list,
+  detail,
+}

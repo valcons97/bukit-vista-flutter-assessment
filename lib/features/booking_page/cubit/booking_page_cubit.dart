@@ -18,6 +18,7 @@ class BookingPageCubit extends Cubit<BookingPageState> {
             navbarSelectedIndex: 1,
             chipSelectedIndex: 0,
             bookingModel: dummyBookingModel,
+            page: Booking.list,
           ),
         );
 
@@ -48,5 +49,14 @@ class BookingPageCubit extends Cubit<BookingPageState> {
     }
 
     emit(state.copyWith(bookingModel: changeModel));
+  }
+
+  void goToBookingDetail(BookingModel bookingModelDetail) {
+    emit(
+      state.copyWith(
+        page: Booking.detail,
+        bookingModelDetail: bookingModelDetail,
+      ),
+    );
   }
 }

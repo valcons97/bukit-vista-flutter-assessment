@@ -6,4 +6,5 @@ enum RoomStatus {
 enum ProfileStatus {
   repeater,
   backpacker,
+  unknown,
 }

@@ -7,9 +7,12 @@ class BukitVistaBottomNavbar extends StatelessWidget {
   const BukitVistaBottomNavbar({
     super.key,
     required this.selectedIndex,
+    this.onTap,
   });
 
   final int selectedIndex;
+
+  final Function(int)? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +46,10 @@ class BukitVistaBottomNavbar extends StatelessWidget {
       showUnselectedLabels: true,
       selectedFontSize: 10,
       unselectedFontSize: 10,
-      onTap: (value) {
-        context.read<BookingPageCubit>().setNavbarIndex(value);
-      },
+      onTap: onTap ??
+          (value) {
+            context.read<BookingPageCubit>().setNavbarIndex(value);
+          },
     );
   }
 }

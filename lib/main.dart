@@ -1,3 +1,4 @@
+import 'package:bukit_vista/features/booking_page/page/booking_page/booking_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/di/config/di_config.dart';
 import 'core/di/injection.dart';
 import 'features/booking_page/cubit/booking_page_cubit.dart';
-import 'features/booking_page/page/booking_page/booking_page.dart';
 
 void main() async {
   await dotenv.load(fileName: 'env/.env');
