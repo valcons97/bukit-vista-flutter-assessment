@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'enums.dart';
+part 'enums.dart';
 
 class BookingModel extends Equatable {
   const BookingModel({
@@ -12,6 +12,7 @@ class BookingModel extends Equatable {
     required this.roomType,
     required this.profileModel,
     required this.hostModel,
+    required this.bookingStatus,
   });
 
   final String id;
@@ -22,6 +23,7 @@ class BookingModel extends Equatable {
   final String roomType;
   final ProfileModel profileModel;
   final HostModel hostModel;
+  final BookingStatus bookingStatus;
 
   @override
   List<Object?> get props => [
@@ -31,6 +33,7 @@ class BookingModel extends Equatable {
         totalReview,
         status,
         roomType,
+        bookingStatus,
       ];
 
   BookingModel copyWith({
@@ -42,6 +45,7 @@ class BookingModel extends Equatable {
     String? roomType,
     ProfileModel? profileModel,
     HostModel? hostModel,
+    BookingStatus? bookingStatus,
   }) {
     return BookingModel(
       id: id ?? this.id,
@@ -52,6 +56,7 @@ class BookingModel extends Equatable {
       roomType: roomType ?? this.roomType,
       profileModel: profileModel ?? this.profileModel,
       hostModel: hostModel ?? this.hostModel,
+      bookingStatus: bookingStatus ?? this.bookingStatus,
     );
   }
 }

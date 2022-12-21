@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../features/booking_page/model/enums.dart';
-import 'bukit_vista_profile_chip.dart';
+import '../../features/booking_page/index.dart';
+import '../core.dart';
 
 class BukitVistaProfileCard extends StatelessWidget {
   const BukitVistaProfileCard({

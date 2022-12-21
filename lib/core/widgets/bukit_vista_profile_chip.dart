@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../features/booking_page/model/enums.dart';
+import '../../features/booking_page/index.dart';
 
 /// Chip for profile thats indicating status like
 /// - repeater

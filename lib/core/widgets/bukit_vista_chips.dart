@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../features/booking_page/model/enums.dart';
+import '../../features/booking_page/index.dart';
 
 class BukitVistaChip extends StatelessWidget {
   const BukitVistaChip({

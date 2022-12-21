@@ -1,5 +1,4 @@
-import 'package:bukit_vista/features/booking_page/model/enums.dart';
-import 'package:bukit_vista/features/booking_page/model/models.dart';
+import '../index.dart';
 
 const dummyProfileModel = ProfileModel(
   id: '1',
@@ -30,5 +29,6 @@ final dummyBookingModel = [
     roomType: 'Grant Marshal',
     profileModel: dummyProfileModel,
     hostModel: dummyHostModel,
+    bookingStatus: BookingStatus.cancelled,
   ),
 ];
