@@ -14,6 +14,7 @@ class BukitVistaScaffold extends StatelessWidget {
     required this.selectedIndex,
     this.backButton = false,
     this.onPressed,
+    this.floatingButton = false,
   });
 
   /// Title for page
@@ -31,6 +32,9 @@ class BukitVistaScaffold extends StatelessWidget {
   /// To program back button function
   final VoidCallback? onPressed;
 
+  ///
+  final bool floatingButton;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,14 @@ class BukitVistaScaffold extends StatelessWidget {
       ),
       body: body,
       bottomNavigationBar: BukitVistaBottomNavbar(selectedIndex: selectedIndex),
+      floatingActionButton: floatingButton
+          ? FloatingActionButton(
+              onPressed: () {
+                // Respond to button press
+              },
+              child: const Icon(Icons.add, size: 36),
+            )
+          : null,
     );
   }
 }

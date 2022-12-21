@@ -8,6 +8,7 @@ class BookingPageState extends Equatable {
     required this.bookingModel,
     required this.page,
     this.bookingModelDetail,
+    required this.tabState,
   });
 
   /// State for booking and detail page
@@ -22,9 +23,14 @@ class BookingPageState extends Equatable {
   /// List of booking
   final List<BookingModel> bookingModel;
 
+  /// State for booking page
   final Booking page;
 
+  /// Detail of single booking model
   final BookingModel? bookingModelDetail;
+
+  /// Selected tab state
+  final TabState tabState;
 
   @override
   List<Object?> get props => [
@@ -34,6 +40,7 @@ class BookingPageState extends Equatable {
         bookingModel,
         page,
         bookingModelDetail,
+        tabState,
       ];
 
   BookingPageState copyWith({
@@ -43,6 +50,7 @@ class BookingPageState extends Equatable {
     List<BookingModel>? bookingModel,
     Booking? page,
     BookingModel? bookingModelDetail,
+    TabState? tabState,
   }) {
     return BookingPageState(
       state: state ?? this.state,
@@ -51,6 +59,7 @@ class BookingPageState extends Equatable {
       bookingModel: bookingModel ?? this.bookingModel,
       page: page ?? this.page,
       bookingModelDetail: bookingModelDetail ?? this.bookingModelDetail,
+      tabState: tabState ?? this.tabState,
     );
   }
 }

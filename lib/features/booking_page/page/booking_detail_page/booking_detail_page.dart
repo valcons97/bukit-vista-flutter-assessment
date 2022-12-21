@@ -6,6 +6,7 @@ import 'package:recase/recase.dart';
 import '../../../../core/core.dart';
 import '../../index.dart';
 
+part 'part/guest_journey_tab.dart';
 part 'part/reservation_tab.dart';
 
 class BookingDetailPage extends StatelessWidget {
@@ -34,7 +35,13 @@ class BookingDetailPage extends StatelessWidget {
           color: Colors.white,
           child: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
-              return [];
+              return [
+                SliverList(
+                  delegate:
+                      // TODO : find fix for this dirty fix
+                      SliverChildListDelegate([const SizedBox(height: 0.001)]),
+                ),
+              ];
             },
             body: Column(
               children: [
@@ -47,7 +54,10 @@ class BookingDetailPage extends StatelessWidget {
                   imageUrl: bookingModelDetail?.profileModel.imageUrl ?? '',
                 ),
                 const BukitVistaDivider(height: 6),
-                const TabBar(
+                TabBar(
+                  onTap: (value) {
+                    context.read<BookingPageCubit>().setTabState(value);
+                  },
                   tabs: tabs,
                   labelColor: Colors.blue,
                   unselectedLabelColor: Colors.black54,
@@ -56,9 +66,7 @@ class BookingDetailPage extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      SingleChildScrollView(
-                        child: Container(height: 28000, child: Text('Tab 1')),
-                      ),
+                      const GuestJourneyTabView(guestJourney: []),
                       ReservationTabView(bookingModelDetail: bookingModelDetail)
                     ],
                   ),

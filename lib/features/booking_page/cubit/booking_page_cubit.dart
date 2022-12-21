@@ -17,6 +17,7 @@ class BookingPageCubit extends Cubit<BookingPageState> {
             chipSelectedIndex: 0,
             bookingModel: dummyBookingModel,
             page: Booking.list,
+            tabState: TabState.journey,
           ),
         );
 
@@ -62,7 +63,16 @@ class BookingPageCubit extends Cubit<BookingPageState> {
     emit(
       state.copyWith(
         page: Booking.list,
+        tabState: TabState.journey,
       ),
+    );
+  }
+
+  void setTabState(int value) {
+    final TabState tabState;
+    value == 0 ? tabState = TabState.journey : tabState = TabState.reservation;
+    emit(
+      state.copyWith(tabState: tabState),
     );
   }
 }

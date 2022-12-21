@@ -10,3 +10,8 @@ enum Booking {
   list,
   detail,
 }
+
+enum TabState {
+  journey,
+  reservation,
+}

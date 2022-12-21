@@ -19,10 +19,13 @@ class BookingPage extends StatelessWidget {
       builder: (context, state) {
         late Widget body;
         late bool backButton;
+        late bool floatingButton;
         if (state.state == BookingState.loading) {
           body = const Center(child: CircularProgressIndicator());
         } else if (state.state == BookingState.loaded) {
           switch (state.page) {
+
+            /// When page is Booking List
             case Booking.list:
               backButton = false;
               body = CustomScrollView(
@@ -63,7 +66,12 @@ class BookingPage extends StatelessWidget {
                 ],
               );
               break;
+
+            /// When page is Booking List
             case Booking.detail:
+              state.tabState == TabState.journey
+                  ? floatingButton = true
+                  : floatingButton = false;
               backButton = true;
               body = BookingDetailPage(
                 bookingModelDetail: state.bookingModelDetail,
@@ -76,6 +84,7 @@ class BookingPage extends StatelessWidget {
           body: body,
           selectedIndex: state.navbarSelectedIndex,
           backButton: backButton,
+          floatingButton: floatingButton,
           onPressed: () {
             context.read<BookingPageCubit>().goToBookingList();
           },
