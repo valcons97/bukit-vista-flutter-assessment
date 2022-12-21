@@ -3,15 +3,25 @@ part of '../booking_detail_page.dart';
 class ReservationTabView extends StatelessWidget {
   const ReservationTabView({
     super.key,
-    required this.children,
+    this.bookingModelDetail,
   });
 
-  final List<Widget> children;
+  final BookingModel? bookingModelDetail;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: children,
+      children: [
+        BookingInformationDayTile(
+          checkInDate: bookingModelDetail!.checkInDate,
+          checkOutDate: bookingModelDetail!.checkOutDate,
+        ),
+        const BukitVistaDivider(height: 6),
+        BookingInformationIdTile(
+          bookingId: bookingModelDetail!.id,
+          bookingStatus: bookingModelDetail!.bookingStatus,
+        )
+      ],
     );
   }
 }

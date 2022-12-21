@@ -13,6 +13,8 @@ class BookingModel extends Equatable {
     required this.profileModel,
     required this.hostModel,
     required this.bookingStatus,
+    required this.totalGuest,
+    required this.bookingValue,
   });
 
   final String id;
@@ -24,16 +26,13 @@ class BookingModel extends Equatable {
   final ProfileModel profileModel;
   final HostModel hostModel;
   final BookingStatus bookingStatus;
+  final int totalGuest;
+  final int bookingValue;
 
   @override
   List<Object?> get props => [
         id,
-        checkInDate,
-        checkOutDate,
-        totalReview,
         status,
-        roomType,
-        bookingStatus,
       ];
 
   BookingModel copyWith({
@@ -46,6 +45,8 @@ class BookingModel extends Equatable {
     ProfileModel? profileModel,
     HostModel? hostModel,
     BookingStatus? bookingStatus,
+    int? totalGuest,
+    int? bookingValue,
   }) {
     return BookingModel(
       id: id ?? this.id,
@@ -57,6 +58,8 @@ class BookingModel extends Equatable {
       profileModel: profileModel ?? this.profileModel,
       hostModel: hostModel ?? this.hostModel,
       bookingStatus: bookingStatus ?? this.bookingStatus,
+      totalGuest: totalGuest ?? this.totalGuest,
+      bookingValue: bookingValue ?? this.bookingValue,
     );
   }
 }
@@ -70,6 +73,7 @@ class ProfileModel extends Equatable {
     required this.location,
     required this.note,
     required this.journeyStatus,
+    required this.phoneNumber,
   });
 
   final String id;
@@ -79,16 +83,11 @@ class ProfileModel extends Equatable {
   final String location;
   final String note;
   final List<String> journeyStatus;
+  final int phoneNumber;
 
   @override
   List<Object?> get props => [
         id,
-        userName,
-        profileStatus,
-        imageUrl,
-        location,
-        note,
-        journeyStatus,
       ];
 }
 

@@ -9,6 +9,7 @@ const dummyProfileModel = ProfileModel(
   location: 'Melbourne, Australia',
   note: '',
   journeyStatus: [],
+  phoneNumber: 081228606057,
 );
 
 const dummyHostModel = HostModel(
@@ -30,5 +31,7 @@ final dummyBookingModel = [
     profileModel: dummyProfileModel,
     hostModel: dummyHostModel,
     bookingStatus: BookingStatus.cancelled,
+    totalGuest: 2,
+    bookingValue: 120000000,
   ),
 ];

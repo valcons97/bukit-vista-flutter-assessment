@@ -1,8 +1,15 @@
 import 'package:bukit_vista/features/booking_page/model/models.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'package:recase/recase.dart';
 
-import '../../../../core/widgets/widgets.dart';
+import '../../../../core/core.dart';
 
+part 'part/booking_day_tile.dart';
+part 'part/booking_id_tile.dart';
+part 'part/booking_text.dart';
+part 'part/booking_value_tile.dart';
 part 'part/reservation_tab.dart';
 
 class BookingDetailPage extends StatelessWidget {
@@ -48,21 +55,9 @@ class BookingDetailPage extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     SingleChildScrollView(
-                        child: Container(height: 28000, child: Text('Tab 1'))),
-                    ReservationTabView(
-                      children: [
-                        BukitVistaInformationTile.stayingDays(
-                          checkIn: bookingModelDetail!.checkInDate,
-                          checkOut: bookingModelDetail!.checkOutDate,
-                        ),
-                        const BukitVistaDivider(height: 6),
-                        BukitVistaInformationTile.bookingInformation(
-                          bookingId: bookingModelDetail!.id,
-                          bookingStatus: bookingModelDetail!.bookingStatus,
-                          context: context,
-                        ),
-                      ],
-                    )
+                      child: Container(height: 28000, child: Text('Tab 1')),
+                    ),
+                    ReservationTabView(bookingModelDetail: bookingModelDetail)
                   ],
                 ),
               ),
