@@ -40,48 +40,37 @@ class BookingDetailPage extends StatelessWidget {
         length: tabs.length,
         child: Container(
           color: Colors.white,
-          child: NestedScrollView(
-            headerSliverBuilder: (context, innerBoxIsScrolled) {
-              return [
-                SliverList(
-                  delegate:
-                      SliverChildListDelegate([const SizedBox(height: 0.001)]),
+          child: Column(
+            children: [
+              BukitVistaProfileCard(
+                name: bookingModelDetail?.profileModel.userName ?? '',
+                location: bookingModelDetail?.profileModel.location ?? '',
+                profileStatus: bookingModelDetail?.profileModel.profileStatus ??
+                    ProfileStatus.unknown,
+                imageUrl: bookingModelDetail?.profileModel.imageUrl ?? '',
+              ),
+              const BukitVistaDivider(height: 6),
+              TabBar(
+                onTap: (value) {
+                  context.read<BookingPageCubit>().setTabState(value);
+                },
+                tabs: tabs,
+                labelColor: Colors.blue,
+                unselectedLabelColor: Colors.black54,
+              ),
+              const BukitVistaDivider(),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    GuestJourneyTabView(
+                      guestJourney:
+                          bookingModelDetail!.profileModel.journeyStatus,
+                    ),
+                    ReservationTabView(bookingModelDetail: bookingModelDetail)
+                  ],
                 ),
-              ];
-            },
-            body: Column(
-              children: [
-                BukitVistaProfileCard(
-                  name: bookingModelDetail?.profileModel.userName ?? '',
-                  location: bookingModelDetail?.profileModel.location ?? '',
-                  profileStatus:
-                      bookingModelDetail?.profileModel.profileStatus ??
-                          ProfileStatus.unknown,
-                  imageUrl: bookingModelDetail?.profileModel.imageUrl ?? '',
-                ),
-                const BukitVistaDivider(height: 6),
-                TabBar(
-                  onTap: (value) {
-                    context.read<BookingPageCubit>().setTabState(value);
-                  },
-                  tabs: tabs,
-                  labelColor: Colors.blue,
-                  unselectedLabelColor: Colors.black54,
-                ),
-                const BukitVistaDivider(),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      GuestJourneyTabView(
-                        guestJourney:
-                            bookingModelDetail!.profileModel.journeyStatus,
-                      ),
-                      ReservationTabView(bookingModelDetail: bookingModelDetail)
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
