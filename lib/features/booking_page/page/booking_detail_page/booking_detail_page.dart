@@ -13,9 +13,11 @@ class BookingDetailPage extends StatelessWidget {
   const BookingDetailPage({
     super.key,
     this.bookingModelDetail,
+    required this.openCloseDial,
   });
 
   final BookingModel? bookingModelDetail;
+  final ValueNotifier<bool> openCloseDial;
 
   static const List<Widget> tabs = [
     Tab(text: 'Guest Journey'),
@@ -26,7 +28,12 @@ class BookingDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        context.read<BookingPageCubit>().goToBookingList();
+        if (openCloseDial.value) {
+          openCloseDial.value = false;
+        } else {
+          context.read<BookingPageCubit>().goToBookingList();
+        }
+
         return false;
       },
       child: DefaultTabController(
@@ -38,7 +45,6 @@ class BookingDetailPage extends StatelessWidget {
               return [
                 SliverList(
                   delegate:
-                      // TODO : find fix for this dirty fix
                       SliverChildListDelegate([const SizedBox(height: 0.001)]),
                 ),
               ];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import 'bukit_vista_bottom_navbar.dart';
 
@@ -15,6 +16,7 @@ class BukitVistaScaffold extends StatelessWidget {
     this.backButton = false,
     this.onPressed,
     this.floatingButton = false,
+    this.openCloseDial,
   });
 
   /// Title for page
@@ -35,6 +37,8 @@ class BukitVistaScaffold extends StatelessWidget {
   ///
   final bool floatingButton;
 
+  final ValueNotifier<bool>? openCloseDial;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,14 +54,22 @@ class BukitVistaScaffold extends StatelessWidget {
       ),
       body: body,
       bottomNavigationBar: BukitVistaBottomNavbar(selectedIndex: selectedIndex),
-      floatingActionButton: floatingButton
-          ? FloatingActionButton(
-              onPressed: () {
-                // Respond to button press
-              },
-              child: const Icon(Icons.add, size: 36),
-            )
-          : null,
+      floatingActionButton: SpeedDial(
+        visible: floatingButton,
+        icon: Icons.add,
+        activeIcon: Icons.close,
+        openCloseDial: openCloseDial,
+        children: [
+          SpeedDialChild(
+            child: const Icon(Icons.draw_outlined),
+            labelWidget: const Text('Add notes'),
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.insights),
+            labelWidget: const Text('Update status'),
+          ),
+        ],
+      ),
     );
   }
 }

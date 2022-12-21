@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   flutter_dotenv: ^5.0.2
   flutter_screenutil: ^5.5.4
+  flutter_speed_dial: ^6.2.0
   get_it: ^7.2.0
   http: ^0.13.5
   injectable: ^1.5.3

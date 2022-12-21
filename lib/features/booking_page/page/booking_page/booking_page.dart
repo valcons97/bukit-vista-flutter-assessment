@@ -15,6 +15,7 @@ class BookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final openCloseDial = ValueNotifier(false);
     return BlocBuilder<BookingPageCubit, BookingPageState>(
       builder: (context, state) {
         late Widget body;
@@ -23,6 +24,7 @@ class BookingPage extends StatelessWidget {
         if (state.state == BookingState.loading) {
           body = const Center(child: CircularProgressIndicator());
         } else if (state.state == BookingState.loaded) {
+          floatingButton = false;
           switch (state.page) {
 
             /// When page is Booking List
@@ -75,6 +77,7 @@ class BookingPage extends StatelessWidget {
               backButton = true;
               body = BookingDetailPage(
                 bookingModelDetail: state.bookingModelDetail,
+                openCloseDial: openCloseDial,
               );
           }
         }
@@ -85,6 +88,7 @@ class BookingPage extends StatelessWidget {
           selectedIndex: state.navbarSelectedIndex,
           backButton: backButton,
           floatingButton: floatingButton,
+          openCloseDial: openCloseDial,
           onPressed: () {
             context.read<BookingPageCubit>().goToBookingList();
           },
